@@ -25,46 +25,21 @@ alphabet = [
     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 
-def search_letter(letter):
-    begin = 0
-    end = len(alphabet) - 1
-
-    while begin <= end:
-        middle = round((begin + end) / 2)
-        middle_letter = alphabet[middle]
-
-        if middle_letter == letter:
-            return middle
-        elif middle_letter > letter:
-            end = middle - 1
-        else:
-            begin = middle + 1
-        
-    return 'none'
-
-
-def first_letter_position_on_alphabet(str):
-    letter = str[0]
-
-    return search_letter(letter)
-
-
 def search_name(list, name):
     begin = 0
-    end = len(list) - 1
-    middle = round((begin + end) / 2)
+    end = len(list)
 
     while begin <= end:
         middle = round((begin + end) / 2)
     
 
-        if first_letter_position_on_alphabet(name) > first_letter_position_on_alphabet(list[middle]):
+        if name > list[middle]:
             begin = middle + 1
-        elif first_letter_position_on_alphabet(name) < first_letter_position_on_alphabet(list[middle]):
+        elif name < list[middle]:
             end = middle - 1
         else:
             return middle
         
     return 'none'
 
-print(search_name(brazilian_names, "Roger"))
+print(search_name(brazilian_names, "Márcio"))
