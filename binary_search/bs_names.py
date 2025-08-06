@@ -20,11 +20,6 @@ brazilian_names = [
     'Wendel', 'Wesley', 'Willian', 'Wilson'
 ]
 
-alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-]
-
 def search_name(list, name):
     begin = 0
     end = len(list)
