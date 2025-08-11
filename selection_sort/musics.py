@@ -9,86 +9,24 @@ playlist = [
     {"title": "Enter Sandman", "view": 834}
 ]
 
-def create_dict_music(title, view):
-    return {"title": title, "view": view}
+def search_minor(list):
+    minor = list[0]['view']
+    index_minor = 0
+    
+    for i in range(1, len(list)):
+        if minor < list[i]['view']:
+            minor = list[i]['view']
+            index_minor = i
+
+    return index_minor
 
 def selection_sort(list):
-    list_sorted = [{'view': ''}]
-    last_view = 0
+    sorted_list = []
 
-    for music_position in range(0, len(list)):
-        music_view = list[music_position]['view']
-        title = list[music_position]['title']
-
-        if music_position == 0 or last_view < music_view:
-            list_sorted.append(create_dict_music(title, music_view))
-        elif last_view > music_view:
-            for i in reversed(list_sorted):
-                if i == len(list_sorted):
-                    continue
-                elif music_view > list_sorted[i]['view']:
-                    list_sorted.insert(music_view, i + 1)
-
-        last_view = music_view
+    for i in range(len(list)):
+        minor = search_minor(list)
+        sorted_list.append(list.pop(minor))
+    
+    return sorted_list
 
 print(selection_sort(playlist))
-
-# loop em cima da playlist
-
-    # Se for o primeiro loop, insere na nova lista o valor
-
-    # Caso contrário, se o valor anterior for menor do que o valor atual
-    #   Apenas insere na nova lista o valor
-
-    # Caso contrário, se o valor anterior for maior do que o valor atual
-    #   Guardar valor atual
-    #
-    #   Fazer um loop na lista nova, do cara atual até o inicio da nova lista
-
-    #       Se for o primeiro loop
-
-    #           Guarda o valor
-
-    #           Continua o loop
-    #           
-    #       Se o valor atual for menor que o valor guardado
-
-    #           Adiciona o valor guardado no indice depois do valor atual
-
-
-
-
-
-
-    
-#def selection_sort(list):
-#    list_sorted = []
-#    last_view = {'view': ''}
-#
-#    for music_position in range(0, len(list)):
-#        number_views = list[music_position]['view']
-#        title = list[music_position]['title']
-#
-#        if music_position == 0:
-#            list_sorted.append(create_dict_music(title, number_views))
-#            last_view = create_dict_music(title, number_views)
-#
-#            continue
-#        elif number_views > last_view['view']:
-#            list_sorted.append(create_dict_music(title, number_views))
-#
-#        elif number_views < last_view['view']:
-#            for i in reversed(list_sorted):
-#                if i == len(list_sorted):
-#                    last_value = list_sorted[i]['view']
-#
-#                    continue
-#                elif list_sorted[i]['view'] < last_value:
-#                    list_sorted.append(create_dict_music(title, list_sorted[i]['view']))
-#
-#                last_value = list_sorted[i]['view']
-#            # fazer um loop verificando até que o valor que vier seja menor que o número, adiciona na frente
-#
-#        last_view = create_dict_music(title, number_views)
-#
-#    return list_sorted
