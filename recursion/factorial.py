@@ -1,15 +1,21 @@
 number = int(input("Write a number and find its factorial: "))
 result = 0
 
-def factorial(number_factorial):
-    next_number = number_factorial - 1
+def factorial(factorial_number, next_num=-1):
+    if next_num == -1:
+        next_number = factorial_number - 1
+    else:
+        next_number = next_num - 1
 
-    if next_number != 1:
-        result = number_factorial * next_number
+    result = factorial_number * next_number
 
     if next_number == 1:
         return result
     
-    factorial(next_number)
+    factorial(result, next_number)
 
-print(f'The factorial of {number} is: {factorial(number)}')
+    return result
+
+value = factorial(number)
+
+print('The factorial of ' + str(number) + ' is: ' + str(value))
