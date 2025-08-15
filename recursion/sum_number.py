@@ -4,8 +4,14 @@ def ask_question():
     if number < 1:
         print("The number that you digit isn't a positive number.")
 
-        sum_numbers(number)
+        ask_question()
+
+    sum_numbers(number)
 
 def sum_numbers(final_num):
+    if final_num == 0:
+        return 0
+    
+    return final_num + sum_numbers(final_num - 1)
 
-    return num + sum_numbers(num + 1)
+print(ask_question())
