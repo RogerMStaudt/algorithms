@@ -6,7 +6,7 @@ def ask_question():
 
         ask_question()
 
-    sum_numbers(number)
+    return sum_numbers(number)
 
 def sum_numbers(final_num):
     if final_num == 0:
@@ -14,4 +14,4 @@ def sum_numbers(final_num):
     
     return final_num + sum_numbers(final_num - 1)
 
-print(ask_question())
+print(f'The result is: {ask_question()}')
