@@ -9,13 +9,13 @@ def ask_question():
     return fibonacci(number)
 
 def fibonacci(num):
-    first_term = 0
-    second_term = 1
-    third_term = first_term + second_term
+    first_term = num - 2
+    second_term = num - 1
+    third_term = num
 
-    if second_term == (third_term - 1):
-        return third_term
+    if first_term == 0:
+        return 1
     
-    return 
+    return third_term + fibonacci(first_term + second_term)
 
 print(ask_question())
