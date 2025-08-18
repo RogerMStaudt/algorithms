@@ -8,14 +8,13 @@ def ask_question():
 
     return fibonacci(number)
 
-def fibonacci(num):
-    first_term = num - 2
-    second_term = num - 1
-    third_term = num
 
-    if first_term == 0:
+def fibonacci(num):
+    if num == 0:
+        return 0
+    if num == 1:
         return 1
     
-    return third_term + fibonacci(first_term + second_term)
+    return (fibonacci(num - 1) + fibonacci(num - 2))
 
 print(ask_question())
