@@ -4,7 +4,7 @@ This repository is dedicated to practicing and improving my knowledge of **algor
 
 ---
 
-## 🎯 Goals
+## Goals
 
 - Practice classic algorithms and problem-solving techniques  
 - Implement and understand fundamental data structures  
@@ -13,7 +13,7 @@ This repository is dedicated to practicing and improving my knowledge of **algor
 
 ---
 
-## 📚 Topics Covered
+## Topics Covered
 
 - Sorting and searching (e.g., bubble sort, binary search)  
 - Recursion and divide-and-conquer strategies  
