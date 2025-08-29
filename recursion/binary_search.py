@@ -1,4 +1,5 @@
 list_numbers = [5,1,74,3,643,43,6,2]
+
 number = int(input("Write a number to search it on the list: "))
 
 def quicksort(list):
@@ -13,23 +14,17 @@ def quicksort(list):
 
 sorted_list = quicksort(list_numbers)
 
-def by_search(list):
-    first_number = 0
-    last_number = 0
+def by_search(list, num, first_position, last_position):
+    middle = round((last_position + first_position) / 2)
 
-    middle = round(len(list) / 2)
-
-    if list[middle] == number:
-        return middle
-    elif list[middle] > number:
-        first_number = middle + 1
+    if last_position >= first_position:
+        if list[middle] == num:
+            return middle
+        elif list[middle] > num:
+            return by_search(list, number, first_position, middle - 1)
+        else:
+            return by_search(list, number, middle + 1, last_position)
     else:
-        last_number = middle - 1
-
-    if len(list) < 2:
         return 'None'
-    
-    return by_search(list[first_number:last_number])
 
-print(sorted_list)
-print(by_search(sorted_list))
+print(by_search(sorted_list, number, 0, len(sorted_list) - 1))
